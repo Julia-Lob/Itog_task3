@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:  
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest    
+    container_name: clickhouse
+    ports:      
+      - "18123:8123"  # HTTP интерфейс ClickHouse
+      - "19000:9000"  # TCP интерфейс ClickHouse    volumes:
+      #- ./db:/var/lib/clickhouse/ # Монтирование локальной директории для данных
+#volumes:
+#  clickhousedb:

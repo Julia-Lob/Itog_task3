@@ -1,0 +1,8 @@
+CREATE DATABASE test;
+CREATE DATABASE main;
+CREATE ROLE read_access;GRANT SELECT ON main.* TO read_access;
+CREATE ROLE write_access;GRANT SELECT ON main.* TO write_access;
+CREATE USER user_read IDENTIFIED BY 'passwordR';
+GRANT read_access TO user_read;
+CREATE USER user_write IDENTIFIED BY 'passwordW';
+GRANT write_access TO user_write;
